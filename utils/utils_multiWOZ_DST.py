@@ -37,6 +37,8 @@ class Lang:
                 self.index_word(word)
         elif type == 'slot':
             for slot in sent:
+                print(sent)
+                print(slot)
                 d, s = slot.split("-")
                 self.index_word(d)
                 for ss in s.split(" "):
@@ -372,7 +374,16 @@ def dump_pretrained_emb(word2index, index2word, dump_path):
 
 
 def get_slot_information(ontology):
-    ontology_domains = dict([(k, v) for k, v in ontology.items() if k.split("-")[0] in EXPERIMENT_DOMAINS])
+    ontology_domains = [[k, v] for k, v in ontology.items() if k.split("-")[0] in EXPERIMENT_DOMAINS]
+    ## turn "attraction-semi-area" to "attraction-area
+    for i in range(len(ontology_domains)):
+        key = ontology_domains[i][0]
+        slist = key.split('-')
+        assert len(slist) == 3
+        d_s = slist[0] + '-' + slist[2]
+        ontology_domains[i][0] = d_s
+    ontology_domains = dict(ontology_domains)
+
     SLOTS = [k.replace(" ","").lower() if ("book" not in k) else k.lower() for k in ontology_domains.keys()]
     return SLOTS
 
