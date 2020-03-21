@@ -1,3 +1,6 @@
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '3'
+
 from tqdm import tqdm
 import torch.nn as nn
 
