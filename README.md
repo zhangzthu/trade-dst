@@ -1,4 +1,6 @@
 ## TRADE Multi-Domain and Unseen-Domain Dialogue State Tracking
+Note: This repo is modified for the MultiWOZ 2.1 version.
+
 <img src="plot/pytorch-logo-dark.png" width="10%"> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
 <img align="right" src="plot/einstein-scroll.png" width="8%">
