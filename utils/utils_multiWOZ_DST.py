@@ -395,7 +395,7 @@ def prepare_data_seq(training, task="dst", sequicity=0, batch_size=100):
     file_test = 'data/test_dials.json'
     # Create saving folder
     if args['path']:
-        folder_name = args['path'].rsplit('/', 2)[0] + '/'
+        folder_name = '/'.join(args['path'].rsplit('/')[:2]) + '/'
     else:
         folder_name = 'save/{}-'.format(args["decoder"])+args["addName"]+args['dataset']+str(args['task'])+'/'
     print("folder_name", folder_name)

@@ -1,3 +1,6 @@
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '3'
+
 from utils.config import *
 from models.TRADE import *
 
